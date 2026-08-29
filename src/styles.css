@@ -1,0 +1,261 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =========================================================
+   VIKAS ENGINEERING WORKS — Premium Dark Industrial Theme
+   ========================================================= */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-copper: var(--copper);
+  --color-silver: var(--silver);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Poppins", system-ui, sans-serif;
+
+  --shadow-glow-gold: 0 0 40px -10px color-mix(in oklab, var(--gold) 60%, transparent);
+  --shadow-glow-silver: 0 0 40px -10px color-mix(in oklab, var(--silver) 50%, transparent);
+  --shadow-elevated: 0 30px 80px -20px rgba(0, 0, 0, 0.8);
+
+  --gradient-metal: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 40%, #404040 60%, #1a1a1a 100%);
+  --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f4d97a 50%, #b8941f 100%);
+  --gradient-radial-glow: radial-gradient(circle at 50% 0%, color-mix(in oklab, var(--gold) 18%, transparent), transparent 60%);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Industrial dark base */
+  --background: oklch(0.08 0 0);            /* #050505 */
+  --foreground: oklch(1 0 0);
+  --surface: oklch(0.13 0 0);               /* #101010 */
+  --card: oklch(0.15 0 0 / 0.55);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.13 0 0);
+  --popover-foreground: oklch(1 0 0);
+
+  --primary: oklch(0.82 0.005 250);         /* silver #C0C0C0 */
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.78 0.13 85);         /* gold #D4AF37 */
+  --secondary-foreground: oklch(0.08 0 0);
+  --accent: oklch(0.62 0.12 45);            /* copper #B87333 */
+  --accent-foreground: oklch(1 0 0);
+
+  --silver: oklch(0.82 0.005 250);
+  --gold: oklch(0.78 0.13 85);
+  --copper: oklch(0.62 0.12 45);
+
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.70 0 0);      /* #A1A1A1 */
+
+  --destructive: oklch(0.62 0.22 27);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(1 0 0 / 0.08);
+  --input: oklch(1 0 0 / 0.12);
+  --ring: oklch(0.78 0.13 85 / 0.5);
+}
+
+.light {
+  /* Industrial light variant — keeps gold/copper accents on a soft platinum surface. */
+  --background: oklch(0.98 0.002 250);       /* near-white */
+  --foreground: oklch(0.15 0 0);             /* near-black */
+  --surface: oklch(0.95 0.003 250);
+  --card: oklch(1 0 0 / 0.7);
+  --card-foreground: oklch(0.12 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0 0);
+
+  --primary: oklch(0.20 0 0);
+  --primary-foreground: oklch(1 0 0);
+
+  --muted: oklch(0.93 0.003 250);
+  --muted-foreground: oklch(0.40 0 0);
+
+  --border: oklch(0.15 0 0 / 0.10);
+  --input: oklch(0.15 0 0 / 0.12);
+}
+
+.light .glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(245,245,245,0.65)) !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+.light .bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px) !important;
+}
+.light .text-metallic {
+  background: linear-gradient(180deg, #2a2a2a 0%, #555 45%, #888 55%, #2a2a2a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Light mode: flip hardcoded white text utilities to dark for legibility */
+.light .text-white { color: #0a0a0a !important; }
+.light .text-white\/90 { color: rgba(10,10,10,0.92) !important; }
+.light .text-white\/85 { color: rgba(10,10,10,0.88) !important; }
+.light .text-white\/80 { color: rgba(10,10,10,0.82) !important; }
+.light .text-white\/70 { color: rgba(10,10,10,0.75) !important; }
+.light .text-white\/65 { color: rgba(10,10,10,0.7) !important; }
+.light .text-white\/60 { color: rgba(10,10,10,0.65) !important; }
+.light .text-white\/55 { color: rgba(10,10,10,0.6) !important; }
+.light .text-white\/50 { color: rgba(10,10,10,0.55) !important; }
+.light .text-white\/40 { color: rgba(10,10,10,0.5) !important; }
+.light .text-white\/30 { color: rgba(10,10,10,0.4) !important; }
+.light .hover\:text-white:hover { color: #000 !important; }
+.light .placeholder\:text-white\/30::placeholder { color: rgba(10,10,10,0.4) !important; }
+
+/* Light mode: flip translucent white surfaces/borders to subtle dark */
+.light .bg-white\/5 { background-color: rgba(0,0,0,0.04) !important; }
+.light .bg-white\/10 { background-color: rgba(0,0,0,0.06) !important; }
+.light .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
+.light .border-white\/10 { border-color: rgba(0,0,0,0.1) !important; }
+.light .border-white\/20 { border-color: rgba(0,0,0,0.15) !important; }
+
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--gold) 40%, transparent);
+    color: white;
+  }
+
+  /* Industrial gridline background overlay */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+}
+
+@utility text-metallic {
+  background: linear-gradient(180deg, #ffffff 0%, #c8c8c8 45%, #6f6f6f 55%, #d8d8d8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.08);
+}
+
+@utility text-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+}
+
+@utility glow-gold {
+  box-shadow: var(--shadow-glow-gold);
+}
+
+@utility bg-gold-gradient {
+  background-image: var(--gradient-gold);
+  background-color: #d4af37;
+}
+
+@utility shine {
+  position: relative;
+  overflow: hidden;
+}
+@utility shine-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.18) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 1.2s ease;
+  pointer-events: none;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-12px) rotate(2deg); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes spark {
+  0% { transform: translate(0,0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) scale(0); opacity: 0; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes shimmer-text {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@utility animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+@utility animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
