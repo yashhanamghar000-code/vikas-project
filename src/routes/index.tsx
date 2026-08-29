@@ -348,9 +348,9 @@ function Hero() {
 
         <Reveal delay={0.35}>
           <h1 className="font-display font-black text-[clamp(2.8rem,7.5vw,6.5rem)] leading-[0.95] tracking-tight max-w-5xl">
-            <span className="text-metallic">Precision Components</span>
+            <span className="text-metallic">Vikas Engineering Works</span>
             <br />
-            <span className="text-white">That Drive </span>
+            <span className="text-white">Precision Components That Drive </span>
             <span className="text-gold italic font-light">Industry</span>
             <br />
             <span className="text-white">Forward.</span>
@@ -429,7 +429,7 @@ function About() {
                   for diverse industrial applications.
                 </p>
                 <p className="text-white/85">
-                  Founded by <span className="text-[var(--gold)] font-medium">Shivaji Tidake</span>,
+                  Founded by <span className="text-[var(--gold)] font-medium">Shivaji Tidke</span>,
                   our commitment to quality, precision machining and customer satisfaction has
                   made us a trusted manufacturing partner.
                 </p>
@@ -623,7 +623,7 @@ function WhyUs() {
               The Vikas <span className="text-gold">Advantage</span>
             </h2>
           </Reveal>
-        </div>
+        </div>=
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {WHY_US.map((f, i) => (
@@ -1091,8 +1091,8 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vikas Engineering Works — Precision Bushes, Pins & Engineering Components, Pune" },
-      { name: "description", content: "Trusted manufacturer of precision bushes, guide pins, dowel pins, metal bolts & piston rods in Pune, Maharashtra since 1989." },
+      { title: "Vikas Engineering Works | Precision Engineering Components in Pune" },
+      { name: "description", content: "Official website of Vikas Engineering Works, Pune. Manufacturer of precision bushes, guide pins, dowel pins, piston rods, metal bolts and custom machined engineering components since 1989." },
     ],
   }),
   component: Home,
